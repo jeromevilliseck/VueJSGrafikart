@@ -1,5 +1,4 @@
 <!doctype html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -18,12 +17,23 @@
 <div class="ui inverted fixed menu">
     <div class="header item">Tutoriel</div>
 </div>
-<div class="ui main container">
 
+<div class="ui main container" id="app">
+    <a v-bind:href="link + '/tutoriels'">{{ message }}</a>
+    <ul>
+        <li v-for="person in persons">{{ person }}</li>
+    </ul>
 </div>
 
+<div class="ui success message" v-if="success">
+    <p>Bravo votre enregistrement a marché si je met la variable associé a vif en false en js ce fait disparaitre le bloc</p>
+</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.4/vue.js"></script>
+<div class="ui error message" v-else>
+    <p>Echec ça n'a pas marché</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.4/vue.js"></script> <!-- Attention en cas de message d'erreur ALT + MAJ + ENTREE pour importer la librairie-->
 <script src="js/app.js"></script>
 </body>
 
