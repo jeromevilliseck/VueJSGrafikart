@@ -19,18 +19,7 @@
 </div>
 
 <div class="ui main container" id="app">
-
-    <input type="checkbox" v-model="cls" :true-value="'success'" :false-value="'error'">
-    <div class="ui message" :class="cls">
-        <i class="close icon" @click="close"></i>
-        <p>
-            {{message}}
-        </p>
-    </div>
-
-    <div class="ui error message" v-else>
-        <p>Echec ça n'a pas marché</p>
-    </div>
+    {{ seconds }}
 </div>
 
 

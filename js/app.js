@@ -1,22 +1,15 @@
-new Vue({
+let vm = new Vue({
     el: '#app',
     data: {
-        message: 'Salut les gens',
-        link: 'http://grafikart.fr',
-        cls: 'success',
-        persons: ['je', 'mez', 'kel']
+        seconds: 0
     },
-    methods: {
-        close: function () {
-            this.message = "Fermé"
-            this.success = false
-        },
-        style: function () {
-            if (this.success){
-                return {background: '#00FF00'}
-            } else {
-                return {background: '#FF0000'}
-            }
-        }
+    mounted: function() {
+        this.$interval = setInterval(() =>{
+            console.log('Time');
+            this.seconds++
+            }, 1000)
+    },
+    destroyed: function() {
+        clearInterval(this.$interval)
     }
 });
