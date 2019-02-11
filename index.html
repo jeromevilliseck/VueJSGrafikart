@@ -20,11 +20,12 @@
 
 <div class="ui main container" id="app">
 
+    <input type="text" v-model="message">
+    <input type="checkbox" v-model="success">
     <div class="ui success message" v-if="success">
         <i class="close icon" @click="close"></i>
         <p>
-            Bravo votre enregistrement a marché si je met la variable associé a vif en false en js ce fait disparaitre le
-            bloc
+            {{message}}
         </p>
     </div>
 
