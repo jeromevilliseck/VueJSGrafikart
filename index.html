@@ -1,6 +1,6 @@
 <!doctype html>
 
-<head>
+<head xmlns:>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,14 +19,13 @@
 </div>
 
 <div class="ui main container" id="app">
-    <a v-bind:href="link + '/tutoriels'">{{ message }}</a>
-    <ul>
-        <li v-for="person in persons">{{ person }}</li>
-    </ul>
 
     <div class="ui success message" v-if="success">
-        <p>Bravo votre enregistrement a marché si je met la variable associé a vif en false en js ce fait disparaitre le
-            bloc</p>
+        <i class="close icon" @click="close"></i>
+        <p>
+            Bravo votre enregistrement a marché si je met la variable associé a vif en false en js ce fait disparaitre le
+            bloc
+        </p>
     </div>
 
     <div class="ui error message" v-else>

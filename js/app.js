@@ -5,5 +5,10 @@ new Vue({
         link: 'http://grafikart.fr',
         success: true,
         persons: ['je', 'mez', 'kel']
+    },
+    methods: {
+        close: function () {
+            this.success = false
+        }
     }
 });
