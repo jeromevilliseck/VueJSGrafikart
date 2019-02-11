@@ -19,7 +19,19 @@
 </div>
 
 <div class="ui main container" id="app">
-    {{ seconds }}
+    <input type="checkbox" v-model="success">
+    <input type="text" v-model="message">
+        {{ message }}
+    <div class="ui message" :class="cls"> <!--Appliquer une classe particulière à un élément-->
+        Salut les gens
+    </div>
+
+    <p>
+        Prénom : {{ firstname }}<br>
+        Nom : {{ lastname }}<br>
+        Nom complet watcher : <input type="text" v-model="fullname"><br>
+        Nom complet computed : <input type="text" v-model="fullname2">
+    </p>
 </div>
 
 

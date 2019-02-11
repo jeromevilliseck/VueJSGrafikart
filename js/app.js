@@ -1,15 +1,34 @@
 let vm = new Vue({
     el: '#app',
     data: {
-        seconds: 0
+        firstname: 'Jean',
+        lastname: 'DeLaTour',
+        fullname: '',
+
+        success: false,
+        message: ''
     },
-    mounted: function() {
-        this.$interval = setInterval(() =>{
-            console.log('Time');
-            this.seconds++
-            }, 1000)
+
+    watch: {
+        fullname: function (value) {
+            console.log('watch', value)
+        }
     },
-    destroyed: function() {
-        clearInterval(this.$interval)
+
+    computed: {
+        cls: function () {
+            console.log('cls called');
+            return this.success === true ? 'success' : 'error'
+        },
+        fullname2: {
+            get: function () {
+                return this.firstname + ' ' + this.lastname
+            },
+            set: function (value) {
+                let parts = value.split(' ');
+                this.firstname = parts[0];
+                this.lastname = parts[1]
+            }
+        }
     }
 });
