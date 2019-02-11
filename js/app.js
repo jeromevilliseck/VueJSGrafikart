@@ -3,7 +3,7 @@ new Vue({
     data: {
         message: 'Salut les gens',
         link: 'http://grafikart.fr',
-        success: true,
+        cls: 'success',
         persons: ['je', 'mez', 'kel']
     },
     methods: {
